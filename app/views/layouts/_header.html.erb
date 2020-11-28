@@ -1,0 +1,18 @@
+<% if current_user %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <%= link_to 'WalleTest', root_path, class: 'navbar-brand' %>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <%= link_to 'My accounts', user_path(current_user), class: 'nav-link' %>
+                <% if current_user.admin %>
+                    <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+                <% end %>
+                <%= link_to 'My profile', edit_user_path(current_user), class: 'nav-link' %>
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                <%= link_to current_user.name, '', class: 'nav-link' %>
+                </div>
+            </div>
+        </div>
+    </nav>
+<% end %>

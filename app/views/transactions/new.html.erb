@@ -1,0 +1,7 @@
+<h2>New transaction</h2>
+<hr>
+
+<%= render 'form', user: @user, account: @account, transaction: @transaction %>
+
+<%= link_to 'Back', user_path(@user), type: 'button', class: 'btn btn-dark' %>
+<br><br>

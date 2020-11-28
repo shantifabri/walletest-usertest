@@ -1,0 +1,35 @@
+<h2>Checking Account <%= @account.id %> </h2>
+<hr>
+
+<div>
+  <h3>Transactions </h2>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Monto</th>
+      <th>Descripcion</th>
+      <th>Divisa</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |t| %>
+      <tr>
+        <td><%= t.amount %></td>
+        <td><%= t.description %></td>
+        <td><%= t.currency %></td>
+        <td><%= t.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New transaction', new_user_checking_account_transaction_path(@user, @account), type: 'button', class: 'btn btn-primary' %>
+<br><br>
+<%= link_to 'Transfer to another account', user_checking_account_transfer_path(@user, @account), type: 'button', class: 'btn btn-primary' %>
+</div>
+<hr>
+
+<%= link_to 'Back', user_path(@user), type: 'button', class: 'btn btn-dark' %>

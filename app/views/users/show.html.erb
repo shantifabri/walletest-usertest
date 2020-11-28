@@ -1,0 +1,101 @@
+<h2>My accounts</h2>
+<hr>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<div class="debit">
+  <h2>Cuentas de Debito </h2>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Cuenta</th>
+      <th>Saldo Liquido</th>
+      <th>Saldo No Liquido</th>
+      <th>Divisa</th>
+      <th>Ver Transacciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.debit_accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.liquid_balance %></td>
+        <td><%= account.illiquid_balance %></td>
+        <td><%= account.currency %></td>
+        <td><%= link_to 'Account transactions', user_debit_account_path(@user, account) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nueva cuenta de débito', new_user_debit_account_path(@user), type: 'button', class: 'btn btn-primary' %>
+<br><br><hr>
+
+</div>
+
+<div class="checking">
+  <h2>Cuentas Corriente </h2>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Cuenta</th>
+      <th>Saldo Liquido</th>
+      <th>Saldo No Liquido</th>
+      <th>Divisa</th>
+      <th>Ver Transacciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.checking_accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.liquid_balance %></td>
+        <td><%= account.illiquid_balance %></td>
+        <td><%= account.currency %></td>
+        <td><%= link_to 'Account transactions', user_checking_account_path(@user, account) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nueva cuenta corriente', new_user_checking_account_path(@user), type: 'button', class: 'btn btn-primary' %>
+<br><br><hr>
+
+</div>
+
+<div class="credit">
+  <h2>Cuentas de Credito </h2>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Cuenta</th>
+      <th>Saldo Liquido</th>
+      <th>Saldo No Liquido</th>
+      <th>Divisa</th>
+      <th>Ver Transacciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.credit_accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.liquid_balance %></td>
+        <td><%= account.illiquid_balance %></td>
+        <td><%= account.currency %></td>
+        <td><%= link_to 'Account transactions', user_credit_account_path(@user, account) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nueva cuenta de crédito', new_user_credit_account_path(@user), type: 'button', class: 'btn btn-primary' %>
+</div>
+<br>
