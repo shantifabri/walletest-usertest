@@ -21,7 +21,7 @@ def transaction_filler(account, categories, transaction_num, factor)
 end
 
 category_down_names = ['Viajes', 'Cuentas básicas', 'Deudas financieras',
-                       'Comida', 'Entretenimiento', 'Imprevistos']
+                       'Comida', 'Entretenimiento', 'Imprevistos', 'Otro']
 category_up_names = %w[Sueldo Bono Devolución Gratificacion]
 categories_data1 = category_down_names.map do |category_name_i|
   { name: category_name_i }

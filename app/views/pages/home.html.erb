@@ -34,6 +34,7 @@
         <thead class='thead-light'>
             <tr>
                 <th>Account</th>
+                <th>Account Number</th>
                 <th>Amount</th>
             </tr>
         </thead>
@@ -42,18 +43,21 @@
             <% @debit_accounts.each_with_index do |debit, index| %>
                 <tr>
                     <td>Debit</td>
+                    <td><%= debit.id %></td>
                     <td><%= debit.liquid_balance %></td>
                 <tr>
             <% end %>
             <% @credit_accounts.each_with_index do |credit, index| %>
                 <tr>
                     <td>Credit</td>
+                    <td><%= credit.id %></td>
                     <td><%= credit.liquid_balance %></td>
                 <tr>
             <% end %>
             <% @checking_accounts.each_with_index do |checking, index| %>
                 <tr>
                     <td>Checking</td>
+                    <td><%= checking.id %></td>
                     <td><%= checking.liquid_balance %></td>
                 <tr>
             <% end %>

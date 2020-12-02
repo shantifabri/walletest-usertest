@@ -28,7 +28,7 @@
     <div class="form-group" id="categories">
       <%= form.label :category %>
       <% @categories.each do |categoria| %>
-          <label class="form-check>
+          <label class="form-check">
             <%= form.radio_button(:category, categoria.id, id: categoria.id) %>
             <%= label_tag(:category, categoria.name) %>
           </label>
