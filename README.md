@@ -1,6 +1,6 @@
 # https://iic3745--walletest--user-test.herokuapp.com/
 
-## Seeds
+## Seeds  
 
 Usuarios de prueba
 - Correr: rails `db:reset` (equivalente a `db:drop` `db:create` `db:migrate` `db:seed`)
